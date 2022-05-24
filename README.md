@@ -1,1 +1,1 @@
-leetcode written in java
+# Leetcode solutions written in java.
