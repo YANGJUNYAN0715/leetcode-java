@@ -11,14 +11,14 @@ public class leetcode150 {
     }
 
     public static int evalRPN(String[] tokens) {
-        Stack<String> st = new Stack<>();
+        Stack<Integer> st = new Stack<>();
         for (String token : tokens) {
             // 通过判断字符串最后一位Char是不是Digit来判断是否是数字
             if (Character.isDigit(token.charAt(token.length()-1))) {
-                st.push(token);
+                st.push(Integer.valueOf(token));
             } else {
-                int b = Integer.parseInt(st.pop());
-                int a = Integer.parseInt(st.pop());
+                int b = st.pop();
+                int a = st.pop();
                 int res = 0;
                 switch (token) {
                     case "+":
@@ -34,9 +34,9 @@ public class leetcode150 {
                         res = a / b;
                         break;
                 }
-                st.push(String.valueOf(res));
+                st.push(res);
             }
         }
-        return Integer.parseInt(st.pop());
+        return st.pop();
     }
 }
