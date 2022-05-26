@@ -14,16 +14,21 @@ public class leetocde1047 {
         st.push(s.charAt(0));
         for (int i = 1; i < n; i++) {
             char ch = s.charAt(i);
-            if (!st.empty() && st.peek()==ch) {
+            if (!st.empty() && st.peek() == ch) {
                 st.pop();
             } else {
                 st.push(ch);
             }
         }
-        StringBuilder sb = new StringBuilder();
+/*        StringBuilder sb = new StringBuilder();
         while(!st.empty()){
             sb.append(st.pop());
         }
-        return sb.reverse().toString();
+        return sb.reverse().toString();*/
+        String str = "";
+        while (!st.empty()) {
+            str = str + st.pop();
+        }
+        return str;
     }
 }
