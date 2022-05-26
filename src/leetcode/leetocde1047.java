@@ -27,7 +27,7 @@ public class leetocde1047 {
         return sb.reverse().toString();*/
         String str = "";
         while (!st.empty()) {
-            str = str + st.pop();
+            str = st.pop() + str;
         }
         return str;
     }
